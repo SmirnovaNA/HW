@@ -17,7 +17,7 @@ class Vehicle:
         return (f'Цвет: {self.__color}')
 
     def print_info(self):
-        print(self.get_model, self.get_horsepower, self.get_color, 'Владелец: {self.owner}')
+        print(self.get_model(), self.get_horsepower(), self.get_color(), 'Владелец: ', self.owner.__init__())
 
     def set_color(self, new_color: str):
         self.new_color = new_color
@@ -27,11 +27,13 @@ class Vehicle:
             print(f'Нельзя сменить цвет на {self.new_color}')
 
 class Sedan(Vehicle):
-    pass
+    __PASSENGERS_LIMIT = 5
 
 vehicle1 = Sedan('Fedos', 'Toyota Mark II', 500, 'blue')
+print(vehicle1.owner)
 vehicle1.print_info()
 vehicle1.set_color('Pink')
 vehicle1.set_color('BLACK')
 vehicle1.owner = 'Vasyok'
 vehicle1.print_info()
+

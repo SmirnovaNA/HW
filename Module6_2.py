@@ -21,8 +21,8 @@ class Vehicle:
 
     def set_color(self, new_color: str):
         self.new_color = new_color
-        if new_color.upper() in self.__COLOR_VARIANTS:
-            _color = new_color
+        if new_color.lower() in self.__COLOR_VARIANTS:
+            self.__color = new_color.lower()
         else:
             print(f'Нельзя сменить цвет на {self.new_color}')
 
@@ -36,4 +36,5 @@ vehicle1.set_color('Pink')
 vehicle1.set_color('BLACK')
 vehicle1.owner = 'Vasyok'
 vehicle1.print_info()
+print(vehicle1.owner)
 
